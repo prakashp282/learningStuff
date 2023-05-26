@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capstone Algorithm Visualizer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <style>
+    .result {
+      height: 400px;
+      width: 100vw;
+      overflow-x: scroll;
+    }
+
+    .bar {
+      min-width: 20px;
+      justify-content: center;
+    }
+
+    .bg-grey {
+      background: grey;
+    }
+
+    .bar-value {
+      bottom: -36px;
+      left: 14px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container p-2 mt-2 mb-2">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card mt-2 text-center text-white bg-info">
+          <div class="card-body">
+            <h2>Algorithm Visualizer</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row p-4">
+      <div class="col-6">
+        <label>*Data Set Size</label>
+        <div class="input-group mb-2">
+          <input type="number" class="form-control" placeholder="Data Set Size (Max 40)" aria-label="Data Set Size"
+            id="dataSet" />
+        </div>
+      </div>
+      <div class="col-6">
+        <label>Number to Search</label>
+        <div class="input-group mb-2">
+          <input type="number" class="form-control" placeholder="Number to search" aria-label="Number to search"
+            id="search" />
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-secondary btn-block" onclick="randomArray()">Random Array</button>
+      </div>
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-dark btn-block" onclick="reset()">Reset</button>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-primary btn-block" onclick="linearSearch()">Linear Search</button>
+      </div>
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-success btn-block" onclick="binarySearch()">Binary Search</button>
+      </div>
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-warning btn-block" onclick="selectionSort()">Selection Sort</button>
+      </div>
+      <div class="col-sm-6 col-lg-2 d-flex justify-content-center mb-2">
+        <button class="btn btn-info btn-block" onclick="bubbleSort()">Bubble Sort</button>
+      </div>
+    </div>
+    <div class="row p-4">
+      <h5 class="text-dark">
+        <h5 id="activeAlgorithm" class="text-primary"></h5>&nbsp;
+        <h5 id="activeAlgorithmResult" class="text-danger"></h5>
+      </h5>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div id="result" class="result bg-light pt-4 pb-4 pl-2 pr-2 d-flex align-items-end">
+      </div>
+    </div>
+  </div>
+  <script src="algorithm.js"></script>
+</body>
+
+</html>
