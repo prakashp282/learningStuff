@@ -31,3 +31,34 @@ namespace HelloWorld
     }
   }
 }
+
+
+// find first repeating character
+
+using System;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      string A = "cg";
+      Console.WriteLine(func(A));      
+    }
+    
+    static char func(string A){
+      char[] input = A.ToCharArray();
+      
+      int[] arr = new int[26];
+      for(int i=0;i<input.Length;i++){
+      	int index = input[i]-'a';
+      	arr[index] += 1;  
+        if(arr[index] >= 2) return  input[i];
+      }
+      
+      return ' ';
+ 
+    }
+  }
+}
