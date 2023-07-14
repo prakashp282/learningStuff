@@ -9,7 +9,7 @@ namespace HelloWorld
   {
     static void Main(string[] args)
     {
-      string A = "acebb";
+      string A = "aabbcce";
       Console.WriteLine(func(A));      
     }
     
@@ -22,8 +22,16 @@ namespace HelloWorld
       	arr[index] += 1;  	
       }
       
+      bool count = false;
       for(int i=0;i<26;i++){
-      	if(arr[i] %2 != 0) return 0;
+        if(arr[i] %2 != 0) {
+          if(!count && input.Length % 2 != 0) {
+          // handling ODD  order palindrome 
+            count =true;
+            continue;
+          }
+          return 0;   
+        }
       }
       
       return 1;
